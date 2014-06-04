@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<span id="albums"><%= pluralize(@albums.count, "album") %></span>
+		<span class="pull-right albums-paginate">
+			<%= will_paginate @albums, :params => {:controller => :albums, :action => :by_user} %>
+		</span>
+	</div>
+
+	<div class="panel-body">
+		<div class="albums">
+			<% if @albums.any? %>
+				<%= render partial: "albums/album", collection: @albums %>
+			<% else %>
+				<h2 class="not-found">No albums found</h2>
+			<% end %>
+		</div>
+	</div>
+</div>
+

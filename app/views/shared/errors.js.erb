@@ -1,0 +1,5 @@
+<% if resource.errors.any? %>
+	<% resource.errors.full_messages.each do |f| %>
+		<%= add_gritter f , :title => "Error" , :image => :error %>
+	<% end %>
+<% end %>

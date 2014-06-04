@@ -1,0 +1,11 @@
+	        <span class="label label-primary"><%= pluralize @photo.views ,'view' %></span>
+	        <% if @photo.public %>
+	          <span class="label label-warning">Public</span>
+	        <% end %>
+	        <span class="label label-primary"><%= time_ago_in_words(@photo.created_at) %> ago</span>
+	        <% if @photo.album %>
+	          <span class="label label-success"><%= link_to "Album: #{@photo.album.name}" , @photo.album %></span>
+	        <% end %>
+	        <span class="label label-success">
+	            Size: <%= number_with_precision(@photo.photo_file_size/1024.0/1024.0,precision: 3, significant: true) %> MB
+	        </span>

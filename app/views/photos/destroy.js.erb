@@ -1,0 +1,4 @@
+$("#modal-window").html("");
+$("#modal-window").modal("hide");
+$("#photo<%=@photo.id%>").remove();
+<%= add_gritter "Photo removed" , :title => "OK" , :image => :success %>

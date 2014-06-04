@@ -1,0 +1,15 @@
+ <%= button_to "Edit" , edit_photo_path , method: :get , remote: true , class: "btn btn-success btn-xs" %>
+
+ <%= button_to "Delete" , photo_path , method: :delete , remote: true , class: "btn btn-danger btn-xs",
+ 				data:{confirm: 'Are you sure?'} %>
+ 
+ <% if @photo.album %>
+ 	<%= button_to "Delete from album" , delete_photo_from_album_path, remote: true ,
+ 				method: :delete, class: "btn btn-warning btn-xs" %>
+ <% end %>
+
+ <% if @photo.public %>
+ 	 <%= button_to "public" , private_photo_path ,method: :get,remote: true, class: "btn btn-primary btn-xs" %>
+ <% else %>
+ 	 <%= button_to "private" , public_photo_path  ,method: :get,remote: true, class: "btn btn-primary btn-xs" %>
+ <% end %>

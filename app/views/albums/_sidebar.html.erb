@@ -1,0 +1,15 @@
+<% if  profile_owner_name? @profile.name %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		Add album
+		</div>
+		<div class="panel-body">
+			<% @album ||= Album.new %>
+			<%= bootstrap_form_for @album, :remote => true do |f| %>
+				<%= f.text_field :name , required: true %>
+				<%= f.text_field :description %>
+				<%= f.submit "Dodaj", class: "btn btn-primary btn-sm" %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

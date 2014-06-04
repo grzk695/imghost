@@ -1,0 +1,9 @@
+$("#show-photo-content").hide("slow");
+$(".edit_photo").remove();
+$("#body").append("<%= escape_javascript(render 'photos/form') %>");
+
+$(document).on("click",".back-btn",function(ev){
+	ev.preventDefault();
+	$("#show-photo-content").show("slow");
+	$(".edit_photo").remove();
+})

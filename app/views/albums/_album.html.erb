@@ -1,0 +1,16 @@
+<div class="album img-thumbnail" id="album<%=album.id%>">
+	<% photo = album.photos.offset(rand(album.photos.count)).first %>
+	<% if photo %>
+		<% path = photo.photo.url(:thumb) %>
+	<% else %>
+		<% path = "/brak_zdjecia.png" %>
+	<% end %>
+	<%= link_to (image_tag path), album_path(album) %>
+	<div class="album-description">
+		<strong><%= album.name %></strong><br />
+		<span class="badge pull-left" style="max-width:40%"><%= pluralize(album.photos.count, 'image') %></span>
+		<span class="badge pull-right" style="max-width:60%" >
+			<%= time_ago_in_words(album.created_at)+" ago" unless album.created_at.blank? %>
+		</span>
+	</div>
+</div>

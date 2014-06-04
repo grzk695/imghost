@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @photo , remote: true, class: "edit-form-photo" do |f|  %>
+	<%= f.text_field :title %>
+	<%= f.text_area :description %>
+	<button class="btn btn-default back-btn">Back</button>
+	<%= f.submit "Save" , remote: true , class: "btn btn-primary" %>
+<% end %>

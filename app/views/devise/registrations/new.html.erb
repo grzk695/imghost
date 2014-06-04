@@ -1,0 +1,16 @@
+<h1>Sign up</h1>
+
+<%= bootstrap_form_for(@user, url: user_registration_path) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.fields_for :profile, @user.profile do |ff| %>
+  	<%= ff.text_field :name, label: "Profile name" %>
+  <% end %>
+
+  <%= f.email_field :email %>
+  <%= f.password_field :password, autocomplete: "off" %>
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <%= f.submit "Sign up",class: "btn btn-primary" %>
+<% end %>
+
+<%= render "devise/shared/links" %>

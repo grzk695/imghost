@@ -1,0 +1,57 @@
+<div class="modal-dialog" style="width:920px;max-width:90%;" id="albums_adding">
+    <div class="modal-content">
+  
+    <div style="padding-top:10px; padding-right:10px">
+    	 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     	  <h4 class="modal-title pull-right" style="margin-right:20px">Select images for this albums </h4>
+     	  
+    </div>
+
+	 <ul class="nav nav-tabs" id="tabs">
+	 	<li <% if params[:type]=='in' %> class="active" <% end %> >
+		  	<%= link_to "This album's images" , add_to_album_path(@album.id,'in'),  remote: true %>
+		</li>
+		<li <% if params[:type]=='out' %> class="active" <% end %>>
+			<%= link_to "Non-album images", add_to_album_path(@album.id,'out')  , remote: true %>
+		</li>
+		<li <% if params[:type]=='all' %> class="active" <% end %>>
+			<%= link_to "All images", add_to_album_path(@album.id,'all')  , remote: true %>
+		</li>  
+	 </ul>
+	
+	<div class="tab-content" id="photo-selector-pagination">
+	<%= will_paginate @photos  %>	
+		<div class="select">
+			<% if @photos.any? %>
+				<select multiple="multiple" class="image-picker show-html" id="image-selector">
+				  <% @photos.each do |f| %>
+				  	<option data-img-src="<%= f.photo.url(:thumb) %>" value="<%= f.id %>">
+					  	<%= f.id %>
+				  	</option>
+				  <% end %>
+				</select>
+			<% else %>
+				No photos
+			<% end %>
+		</div>
+	</div>
+
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="window.album.send(<%= @album.id %>)" data-dismiss="modal">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+ </div><!-- /.modal-dialog -->
+
+
+	<% if @first %>
+		<script>window.album.data = [<% @album.photos.each do |f| %>"<%= f.id %>", <% end %>]; </script>
+	<% end %>
+	
+<script>
+	$("#image-selector").val(window.album.data)
+	$("#image-selector").imagepicker({
+		//show_label: true
+	});
+</script>

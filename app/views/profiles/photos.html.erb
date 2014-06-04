@@ -1,0 +1,23 @@
+<section class="row">
+
+  <section class="col-md-8">
+	<%=render 'photos/photos' %>
+  </section>
+
+  <section class="col-md-4">
+    <%  if profile_owner_name? @profile_name %>	
+    	<div class="row"><%= render 'photos/new' %></div>
+    	<div id="delete_photo" class="row">
+    	   <div class="panel panel-default">
+            <div class="panel-heading" id="selectedNumber">
+            Selected: 0
+            </div>
+            <div class="panel-body">
+            <%= button_to('Destroy',"javascript:sendDelete()", data:{confirm: 'Are you sure?'}, class: "btn btn-danger") %>
+            </div>
+         </div>
+    	</div>
+	<% end %>
+  </section>
+
+</section>

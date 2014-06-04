@@ -1,0 +1,22 @@
+<div class="modal-dialog modal-lg" style="max-height:80%;margin-top:0">
+    <div class="modal-content" style="max-height:80%">
+
+    	<div id="show-photo-header">
+    		<%= render "show_header" %>
+    	</div>
+
+      	<div class="modal-body" style="max-height:80%" id="body">
+          	<div>
+            	<%= link_to "← previous ", show_photo_path( @type ,@prev ),{remote: true}  if @prev %>
+           		 <span class="pull-right"><%= link_to "next →", show_photo_path( @type ,@next ),{remote: true}  if @next %></span>
+          	</div>
+      		<div id="show-photo-content">       
+            	<%= render "show_content" %>
+        	</div>
+      	</div>
+
+      	<div class="modal-footer" id="show-photo-footer">
+      		<%= render "show_footer" %>
+      	</div>
+    </div>
+</div>

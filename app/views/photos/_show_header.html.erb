@@ -1,0 +1,15 @@
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            image <%= @position %> of <%= @total %>  
+            <% if owner_signin? @photo %>
+              <div id="photo-admin-panel" class = "photo-admin-panel pull-right">
+                  <%= render 'photos/admin_panel' %>
+              </div> 
+            <% end %>      
+        </div>
+       <div class="photo-description">
+          File name: <strong><%= @photo.photo_file_name %></strong>
+          <% if @photo.title %>
+              Title: <strong><%= @photo.title %></strong>
+          <% end %>
+        </div>

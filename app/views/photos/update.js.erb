@@ -1,0 +1,8 @@
+$("#show-photo-content").show("slow");
+$(".edit_photo").remove();
+
+$("#show-photo-content").html("<%= escape_javascript(render 'photos/show_content') %>");
+$("#show-photo-header").html("<%= escape_javascript(render 'photos/show_header') %>");
+$("#show-photo-footer").html("<%= escape_javascript(render 'photos/show_footer') %>");
+
+<%= add_gritter "Photo updated" , :title => "OK" , :image => :success %>

@@ -1,0 +1,5 @@
+<h1>Lista zdjęć</h1>
+
+<%= @photos.each do |p| %>
+	<%= image_tag p.photo.url %>
+<% end %>

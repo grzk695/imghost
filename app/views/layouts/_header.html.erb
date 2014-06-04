@@ -1,0 +1,21 @@
+
+<header>
+  <%= navbar fixed: :top, inverse:  true, responsive:  true do %>
+    <%= navbar_header  brand:  "IMGHOST", brand_link:  root_path %>
+    <%= navbar_collapse do %>
+      <%= navbar_group align: 'right' do %>
+      <% if user_signed_in? %>
+        <%= navbar_item "Images", profile_photos_path(current_profile_name) %>
+        <%= navbar_item "Albmus", profile_albums_path(current_profile_name) %>
+        <%= navbar_item "Logout", logout_path,{},  {'data-method' => 'delete'}  %>
+        <%= navbar_item current_profile_name, profile_photos_path(current_profile_name) %>
+      <% else %>
+        <%= navbar_item "Login", login_path %>
+        <%= navbar_item "Register", register_path %>
+      <% end %>
+    <% end %>
+
+    <% end %>
+  <% end %>
+</header>
+
