@@ -20,7 +20,7 @@ module ApplicationHelper
 	end
 
 	def owner_signin? subject
-		if subject.profile == current_user.profile
+		if user_signed_in? && subject.profile == current_user.profile
 			return true
 		else
 			return false

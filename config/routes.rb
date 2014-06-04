@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get 'register' => 'users/registrations#new', :as => :register
   end
 
-  resources :photos , :skip => :new
+  resources :photos 
   resources :profiles
   resources :albums
   

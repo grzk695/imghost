@@ -132,7 +132,10 @@ footer {
 }
 
 .modal-dialog {
-  margin-top:-20px;
+  .modal-header {
+    padding: 3px 5px 3px 15px;
+  }
+ 
 }
 
 .photo-description{

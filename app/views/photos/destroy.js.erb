@@ -1,4 +1,15 @@
-$("#modal-window").html("");
-$("#modal-window").modal("hide");
 $("#photo<%=@photo.id%>").remove();
-<%= add_gritter "Photo removed" , :title => "OK" , :image => :success %>
+
+if ($("#next_photo").length>0) {
+	$("#next_photo").click();
+} 
+else if ($("#prev_photo").length>0){
+	$("#prev_photo").click();
+} 
+else {
+	$("#modal-window").html("");
+	$("#modal-window").modal("hide");
+}
+
+
+
