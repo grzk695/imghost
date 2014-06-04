@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   
   before_action :profiles_photos, only: :photos
-
+  
   def show
   	@photos = [];
   end

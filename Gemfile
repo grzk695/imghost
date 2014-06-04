@@ -14,6 +14,7 @@ gem "therubyracer"
 gem 'bootstrap3-rails', '~> 3.1.1'
 gem 'rails_bootstrap_navbar'
 gem 'bootstrap_form'
+gem "cancan"
 
 group :development, :test do
   gem 'rspec-rails'
