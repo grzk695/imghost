@@ -1,22 +1,21 @@
-<div class="modal-dialog modal-lg" style="max-height:80%;margin-top:0">
-    <div class="modal-content" style="max-height:80%">
+<div class="modal-dialog" id='photo-browser-dialog'>
+  <div class="modal-content">
 
     	<div id="show-photo-header">
     		<%= render "show_header" %>
     	</div>
 
-      	<div class="modal-body" style="max-height:80%" id="body">
-          	<div>
-            	<%= link_to "← previous ", show_photo_path( @type ,@prev ),{remote: true,id: "prev_photo"}  if @prev %>
-           		 <span class="pull-right"><%= link_to "next →", show_photo_path( @type ,@next ),{remote: true, id: "next_photo"}  if @next %></span>
-          	</div>
-      		<div id="show-photo-content">       
-            	<%= render "show_content" %>
-        	</div>
-      	</div>
+      <%= render 'photos/navs' %>	
+      <div id ="body-dialog">
 
-      	<div class="modal-footer" id="show-photo-footer">
-      		<%= render "show_footer" %>
-      	</div>
-    </div>
+      </div>
+ 
+      <div id="show-photo-content">       
+            <%= render "show_content" %>
+      </div>
+
+    	<div class="modal-footer" id="show-photo-footer">
+    		<%= render "show_footer" %>
+    	</div>
+  </div>
 </div>

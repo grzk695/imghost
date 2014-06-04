@@ -1,6 +1,5 @@
 $(".albums").prepend("<%= escape_javascript(render :partial => 'albums/album' , :locals =>  {:album => @album} ) %>")
 $(".albums .not-found").remove();
 $("#albums").html("<%= pluralize(@albums.count, "album") %>");
-//$(".albums-paginate").html("<%= escape_javascript( will_paginate @albums )%>")
 $("input[name='album[name]']").val("")
 $("input[name='album[description]']").val("")

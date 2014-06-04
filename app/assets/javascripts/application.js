@@ -21,4 +21,5 @@
 //= require gritter
 //= require jquery-fileupload
 //= require image-picker.min.js
+//= require jquery.capty.min.js
 //= require_tree .

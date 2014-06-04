@@ -1,21 +1,21 @@
 <div class="panel panel-default" id="photosp">
-<div class="panel-heading">
-	<span><%= pluralize(@photos.count,'image') %></span>
-	<span class="pull-right"><%= will_paginate @photos  %></span>
-</div>
-<div class="panel-body">
-	<div class="photos">
-		<% if @photos.any? %>
-			<form action=""><%= render partial: 'photos/photo' , collection: @photos %></form>
-		<% else %>
-			<span> No photos to display </span>
-		<% end %>
+	<div class="panel-heading">
+		<span><%= pluralize(@photos.count,'image') %></span>
+		<span class="pull-right"><%= will_paginate @photos  %></span>
 	</div>
-</div>
-<div class="panel-footer">
-	<span ><%= will_paginate @photos %></span>
-</div>
-<div id="refresh_token" style="display:none;"><%= @refresh_token %></div>
+	<div class="panel-body">
+		<div class="photos">
+			<% if @photos.any? %>
+				<form action=""><%= render partial: 'photos/photo' , collection: @photos %></form>
+			<% else %>
+				<span> No photos to display </span>
+			<% end %>
+		</div>
+	</div>
+	<div class="panel-footer">
+		<span ><%= will_paginate @photos %></span>
+	</div>
+	<div id="refresh_token" style="display:none;"><%= @refresh_token %></div>
 </div>
 
 <script>

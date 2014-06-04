@@ -17,6 +17,7 @@
  *= require gritter
  *= require jquery.fileupload-ui
  *= require image-picker
+ *= require jquery.capty.css
  *= require_tree .
 
  */

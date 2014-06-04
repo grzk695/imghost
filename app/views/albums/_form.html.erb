@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @album , {remote: true} do |f| %>
+        <%= f.text_field :name , :required => true , :maxlength => 50 %>
+        <%= f.text_area :description , :maxlength => 300 %>
+        <%= f.check_box :public %>
+        <%= f.submit "Save", class: "btn btn-primary" %>
+ <% end %>

@@ -8,8 +8,8 @@
 	<%= link_to (image_tag path), album_path(album) %>
 	<div class="album-description">
 		<strong><%= album.name %></strong><br />
-		<span class="badge pull-left" style="max-width:40%"><%= pluralize(album.photos.count, 'image') %></span>
-		<span class="badge pull-right" style="max-width:60%" >
+		<span class="badge pull-left"><%= pluralize(album.photos.count, 'image') %></span>
+		<span class="badge pull-right">
 			<%= time_ago_in_words(album.created_at)+" ago" unless album.created_at.blank? %>
 		</span>
 	</div>

@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Imghost</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= render 'layouts/header' %>
-
-<div class="container">
- 
-	<div class="growl-info">
-		<%= render 'layouts/messages' %>
-	</div>
-
-	<%= yield %>
-
-	<%= render 'layouts/footer' %>
-
-	<%= debug(params) if Rails.env.development? %>
-</div>
-<div id="modal-window" class="modal fade" role="dialog" style="max-height:80%" 
-	 aria-labelledby="myModalLabel" aria-hidden="true" ></div>
-</body>
+	
+	<head>
+	  <title>Imghost</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	
+	<body>
+		<%= render 'layouts/header' %>
+		<div class="container"> 
+			<div class="growl-info">
+				<%= render 'layouts/messages' %>
+			</div>
+			<%= yield %>
+			<%= render 'layouts/footer' %>
+			<%= debug(params) if Rails.env.development? %>
+		</div>
+		<div id="modal-window" class="modal fade" role="dialog" style="max-height:80%" 
+			 aria-labelledby="myModalLabel" aria-hidden="true" >
+		</div>
+	</body>
 </html>

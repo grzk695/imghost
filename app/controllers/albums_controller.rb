@@ -96,7 +96,7 @@ class AlbumsController < ApplicationController
 
   private
   	def album_params 
-  		params.require(:album).permit(:name,:description)
+  		params.require(:album).permit(:name,:description,:public)
   	end
 
      def generate_refresh_token(id, page)

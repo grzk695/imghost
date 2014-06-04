@@ -81,6 +81,7 @@ footer {
   }
 }
 
+
 .name {
   white-space:nowrap; 
   overflow:hidden;
@@ -116,7 +117,7 @@ footer {
 }
 
 .photo {
-  max-height: 100%;
+  max-height: 600px;
   max-width: 100%;
 }
 
@@ -147,4 +148,97 @@ footer {
   strong{
     margin-right: 30px;
   }
+}
+
+#show-photo-footer {
+  padding: 2px 4px 2px 4px;
+  margin-top: 0px;
+}
+
+.show-photo {
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width:100%;
+  max-height:70%;
+}
+
+@media all and (max-width: 799px) and (min-width: 300px){
+  #photo-browser-dialog {
+    width: 450px;
+    max-width: 100%;
+  }
+}
+
+@media all and (min-width: 800px){
+  #photo-browser-dialog  {
+    width: 550px;
+    max-width: 100%;
+  }
+}
+
+@media all and (min-width: 800px){
+  #photo-browser-dialog  {
+    width: 650px;
+    max-width: 100%;
+  }
+}
+
+@media all and (max-height: 399px) and (min-height: 300px){
+  #photo-browser-dialog , .show-photo {
+    max-height: 250px;
+  }
+}
+
+@media all and (max-height: 599px) and (min-height: 400px){
+  #photo-browser-dialog , .show-photo {
+    max-height: 400px;
+  }
+}
+
+@media all and (max-height: 799px) and (min-height: 600px){
+  #photo-browser-dialog , .show-photo {
+    max-height: 550px;
+  }
+}
+
+@media all and (min-height: 800px){
+  #photo-browser-dialog , .show-photo {
+    max-height: 650px;
+  }
+}
+
+
+
+
+#body-dialog{
+  padding: 0px 50px 0px 50px;
+}
+
+
+.slider_next{
+  background: #f8f8f8;
+  position: relative;
+  border-radius: 70px;
+  position: absolute;
+  z-index: 99;
+  top: 50px;
+  right: -25px;
+  padding: 5px 5px 5px 5px; 
+  cursor: pointer; 
+}
+
+.slider_prev{
+  background: #f8f8f8;
+  position: relative;
+  border-radius: 70px;
+  position: absolute;
+  z-index: 99;
+  top: 50px;
+  left: -25px;
+  padding: 5px 5px 5px 5px; 
+  cursor: pointer;
+}
+
+.modal.fade.in {
+top: 40%;
 }
