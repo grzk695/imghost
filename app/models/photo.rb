@@ -33,8 +33,10 @@ class Photo < ActiveRecord::Base
     }
   	end
 
-  	def self.photos_by_profile_name (name)
-  		Photo.joins(:profile).where("profiles.name = ?",name).order('created_at DESC')
+  	def self.by_profile_name (name, all = false )
+  		 photos = Photo.joins(:profile).where("profiles.name = ?",name)
+       photos = photos.where(public: true) unless all
+       photos = photos.order('created_at DESC')
   	end
 
     def self.by_album (id)

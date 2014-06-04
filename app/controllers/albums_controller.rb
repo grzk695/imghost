@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+
+  
   
   def by_user
   	@profile = Profile.find_by_name params[:profile]
