@@ -62,7 +62,7 @@ class PhotosController < ApplicationController
       format.html 
       format.js
     end
-    authorize! :read , @photo 
+    authorize! :read , @photo unless params[:link]
   end
 
   def delete_from_album
@@ -117,13 +117,21 @@ class PhotosController < ApplicationController
 
     def get_photo_next_prev
       @photo = Photo.find(params[:id])
-      @photo.increment!(:views)
+      @photo.increment!(:views)     
+      loged = owner_signin? @photo
+      if params[:link]
+        if Photo.by_link(params[:link],params[:id]) == nil
+          raise CanCan::AccessDenied.new("Not authorized!", :read, Photo)
+        end
+      end
+ 
       if params[:type]
         @type = params[:type]
-        @next = @photo.next_for(@type)
-        @prev = @photo.prev_for(@type)
-        @position = @photo.position_in(@type)
-        @total = @photo.count_for(@type)
+        @link = params[:link]
+        @next = @photo.next_for(@type,@link,loged)
+        @prev = @photo.prev_for(@type,@link,loged)
+        @position = @photo.position_in(@type,@link,loged)
+        @total = @photo.count_for(@type,@link,loged)
       end
     end
 end

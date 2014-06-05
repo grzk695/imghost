@@ -1,0 +1,14 @@
+<tr>
+	<td>
+		<%= link_to full_url(link_to_path(link.url)) , link_to_path(link.url) %>
+	</td>
+	<td>
+		<%= link.what_shared %>
+	</td>
+	<td>
+		<%= link.items_shared %>
+	</td>
+	<td>
+		<%= link_to "Delete" , link_path(link) , method: :delete  %>
+	</td>
+</tr>

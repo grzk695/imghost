@@ -1,0 +1,18 @@
+<h1>Link list</h1>
+<% if @links.any? %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>URL</th>
+				<th>What</th>
+				<th>Items</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render partial: 'links/link' , collection: @links %>
+		</tbody>
+	</table>
+<% else %>
+	No items found
+<% end %>

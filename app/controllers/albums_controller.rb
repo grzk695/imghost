@@ -31,7 +31,7 @@ class AlbumsController < ApplicationController
     generate_refresh_token params[:id],params[:page]
     respond_to do |format|
       format.html
-      format.js
+      format.js { render render 'shared/show_pagination' }
     end
   end
 

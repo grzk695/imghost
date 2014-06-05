@@ -30,6 +30,19 @@ function sendDelete(){
         });
 }
 
+function sendShare(type){
+        $.ajax({
+            url: "/links",
+            method: 'post',
+            data:{
+                _method: "post",
+                ids: selected,
+                type: type
+            },
+            dataType: 'script'
+        });
+}
+
 function drawSelected(){
     $.each(selected,function(index,value){
          var input = "input[value='"+value+"'][type='checkbox']";

@@ -4,5 +4,5 @@ class Profile < ActiveRecord::Base
 	has_many :albums, :inverse_of => :profile , :dependent => :destroy
 	validates :user, presence: true, uniqueness: true
 	validates :name, presence: true, uniqueness: true, length: {maximum: 30}
-
+	has_many :links
 end

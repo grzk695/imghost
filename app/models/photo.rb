@@ -10,6 +10,8 @@ class Photo < ActiveRecord::Base
     	#:dropbox_credentials => Rails.root.join("config/dropbox.yml"),
 	}
 
+  attr_accessor :token
+
 	belongs_to :profile
   belongs_to :album
 	
@@ -51,36 +53,61 @@ class Photo < ActiveRecord::Base
         .order("created_at DESC")
     end
 
-  	def next_for (owner_kind)
+    def self.by_link link , id
+      l = Link.where(url: link).first
+      if l
+        l.all_photos.where("photos.id = ?",id).first
+      else
+        return nil
+      end
+    end
+
+  	def next_for (owner_kind,link,loged)
   		if owner_kind == "profile"
-  			profile.photos.where("id < ?", id).order("id DESC").first
+  			p = profile.photos.where("id < ?", id)
+        p = p.where( :public => true) unless loged==true
+        return p.order("id DESC").first
   		elsif owner_kind == 'album'
         album.photos.where("id < ?", id).order("id DESC").first
+      elsif owner_kind == 'link'
+        Link.where(url: link).first.all_photos.where("photos.id < ?", id).order("id DESC").first
   		end
   	end
 
-  	def prev_for (owner_kind)
+  	def prev_for (owner_kind,link,loged)
   		if owner_kind == "profile"
-  			profile.photos.where("id > ?", id).order("id ASC").first
+  			p = profile.photos.where("id > ?", id)
+        p = p.where( :public => true) unless loged==true
+        return p.order("id ASC").first
   		elsif owner_kind == 'album'
         album.photos.where("id > ?", id).order("id ASC").first
-  		end
+  		elsif owner_kind == 'link'
+        Link.where(url: link).first.all_photos.where("photos.id > ?", id).order("photos.id ASC").first
+      end
   	end
 
-  	def position_in (owner_kind)
+  	def position_in (owner_kind,link,loged)
   		if owner_kind=='profile'
-  			profile.photos.order(created_at: :desc).index(self)+1
+  			p=profile.photos
+        p=p.where( :public => true) unless loged==true
+        p=p.order(created_at: :desc).index(self)+1
       elsif owner_kind=='album'
         album.photos.order(created_at: :desc).index(self)+1
-  		end
+  		elsif owner_kind == 'link'
+        Link.where(url: link).first.all_photos.order(created_at: :desc).index(self)+1
+      end
   	end
 
-  	def count_for (owner_kind)
+  	def count_for (owner_kind,link,loged)
   		if owner_kind=='profile'
-  			profile.photos.count
+  			p=profile.photos
+        p = p.where( :public => true) unless loged==true
+        p.count
       elsif owner_kind=='album'
         album.photos.count
-  		end
+  		elsif owner_kind == 'link'
+        Link.where(url: link).first.all_photos.count
+      end
   	end
 
 end

@@ -1,6 +1,10 @@
 <div class="photo" id="photo<%= photo.id %>">
+	<% if @type=='link' %>
+		<% id = @link.url %>
+	<% end %>
+	<% id||=nil %>
 	<%= link_to image_tag( photo.photo.url(:thumb), class: "img-thumbnail"),
-							show_photo_path( @type ,photo ),
+							show_photo_path( @type ,photo ,:link=>id ),
 					{remote: true, 'data-toggle' => "modal", 'data-target' => "#modal-window"} %>
 	<% if owner_signin? photo %>
 		<input class="checkbox" type="checkbox" name="photo" value="<%= photo.id %>">

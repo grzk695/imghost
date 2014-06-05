@@ -13,10 +13,12 @@
             Selected: 0
             </div>
             <div class="panel-body">
-            <%= button_to('Destroy',"javascript:sendDelete()", data:{confirm: 'Are you sure?'}, class: "btn btn-danger") %>
+            <%= button_to('Destroy',"javascript:sendDelete()", data:{confirm: 'Are you sure?'}, class: "btn btn-danger btn-block") %>
+            <%= button_to('Share',"javascript:sendShare('photo')", class: "btn btn-primary btn-block") %>
             </div>
-         </div>
-    	</div>
+            
+          </div>
+      </div>
 	<% end %>
   </section>
 

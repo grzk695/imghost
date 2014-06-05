@@ -1,7 +1,7 @@
 class CreateLinks < ActiveRecord::Migration
   def change
     create_table :links do |t|
-      t.string :url , null: false , unique: true
+      t.string :url  , unique: true
       t.timestamps
     end
 
