@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603220401) do
+ActiveRecord::Schema.define(version: 20140605103005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 20140603220401) do
     t.datetime "updated_at"
   end
 
+  create_table "links", force: true do |t|
+    t.string   "url",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["url"], name: "index_links_on_url", unique: true, using: :btree
+
   create_table "photos", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -68,6 +76,16 @@ ActiveRecord::Schema.define(version: 20140603220401) do
 
   add_index "profiles", ["name"], name: "index_profiles_on_name", unique: true, using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "shared_items", force: true do |t|
+    t.integer  "link_id",    null: false
+    t.integer  "item_id",    null: false
+    t.string   "item_type",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shared_items", ["item_id", "item_type"], name: "index_shared_items_on_item_id_and_item_type", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
