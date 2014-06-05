@@ -3,7 +3,7 @@
 	          <span class="label label-warning">Public</span>
 	        <% end %>
 	        <span class="label label-primary"><%= time_ago_in_words(@photo.created_at) %> ago</span>
-	        <% if @photo.album %>
+	        <% if @photo.album && (can? :read , @photo.album)  %>
 	          <span class="label label-success"><%= link_to "Album: #{@photo.album.name}" , @photo.album %></span>
 	        <% end %>
 	        <span class="label label-success">

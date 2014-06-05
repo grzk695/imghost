@@ -15,5 +15,9 @@
 			<% end %>
 		</div>
 	</div>
+
+	<div class="panel-footer">
+		<%= will_paginate @albums, :params => {:controller => :albums, :action => :by_user} %>
+	</div>
 </div>
 

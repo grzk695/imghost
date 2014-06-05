@@ -17,7 +17,8 @@ class ProfilesController < ApplicationController
   private
 
     def profiles_photos
-      @photos = Photo.by_profile_name params[:name] , ( profile_owner_name? params[:name] )
+      @photos = Photo.by_profile_name params[:name] 
+      @photos = @photos.accessible_by(current_ability,:index)
       @photos = @photos.paginate page: params[:page], per_page: 24
       @profile_name = params[:name]
       @type = 'profile'
