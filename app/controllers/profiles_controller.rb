@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
     	generate_refresh_token(params[:name],params[:page])
     	format.html
-    	format.js { render render 'shared/show_pagination' }
+    	format.js { render 'shared/show_pagination' }
     end
   end
 

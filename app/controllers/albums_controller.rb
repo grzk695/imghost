@@ -31,7 +31,7 @@ class AlbumsController < ApplicationController
     generate_refresh_token params[:id],params[:page]
     respond_to do |format|
       format.html
-      format.js { render render 'shared/show_pagination' }
+      format.js { render 'shared/show_pagination' }
     end
   end
 
@@ -74,8 +74,7 @@ class AlbumsController < ApplicationController
   end
 
   def album_photos
-    @first = params[:first]
-    @first||=false
+    @first = params[:first] if params[:first]=="true"
     @album = Album.find(params[:id])
     authorize! :update , @album
     if params[:type] == 'in'

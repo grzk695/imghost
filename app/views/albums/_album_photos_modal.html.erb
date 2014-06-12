@@ -19,7 +19,7 @@
 		 </ul>
 	
 		<div class="tab-content" id="photo-selector-pagination">
-		<%= will_paginate @photos  %>	
+		<%= will_paginate @photos , :params => {:first => false}  %>	
 			<div class="select">
 				<% if @photos.any? %>
 					<select multiple="multiple" class="image-picker show-html" id="image-selector">
