@@ -1,8 +1,12 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<h2>
+	Profile name: <%= @profile.name %>
+</h2>
 
-<% @photos.each do |p| %>
-	
-	<%= image_tag p.photo.url(:thumb) %>
-
-<% end %>
+<ul>
+	<li>
+		<%= link_to "Photos" , profile_photos_path(@profile.name) %>
+	</li>
+	<li>
+		<%= link_to "Albums" , profile_albums_path(@profile.name) %>
+	</li>
+</ul>

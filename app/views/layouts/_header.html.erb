@@ -9,7 +9,6 @@
         <%= navbar_item "Albums", profile_albums_path(current_profile_name) %>
         <%= navbar_item "Shared", links_path %>
         <%= navbar_item "Logout", logout_path,{},  {'data-method' => 'delete'}  %>
-        <%= navbar_item current_profile_name, profile_photos_path(current_profile_name) %>
       <% else %>
         <%= navbar_item "Login", login_path %>
         <%= navbar_item "Register", register_path %>

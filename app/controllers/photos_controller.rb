@@ -58,7 +58,7 @@ class PhotosController < ApplicationController
       format.html 
       format.js
     end
-    authorize! :read , @photo unless params[:link]
+    authorize! :read , @photo unless params[:link] || params[:type]=='album'
   end
 
   def delete_from_album
@@ -150,6 +150,14 @@ class PhotosController < ApplicationController
       if params[:link]
         if Photo.by_link(params[:link],params[:id]) == nil
           raise CanCan::AccessDenied.new("Not authorized!", :read, Photo)
+        end
+      end
+
+      if params[:type]=='album'
+        if cannot? :read, @photo
+          if @photo.album == nil || @photo.album[:public] == false
+            raise CanCan::AccessDenied.new("Not authorized!", :read, Photo)
+          end
         end
       end
  

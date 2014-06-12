@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :profiles_photos, only: :photos
   
   def show
-  	@photos = [];
+    @profile = Profile.find(params[:id])
   end
 
   def photos
