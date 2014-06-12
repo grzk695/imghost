@@ -45,18 +45,6 @@ class PhotosController < ApplicationController
     @photo = Photo.new()
   end
 
-  def create
-    @photo = Photo.new(photo_params)
-    @photo.profile = current_user.profile if user_signed_in?
-    respond_to do |format|
-      if @photo.save
-        format.json { render json: {files: [@photo.to_jq_upload]}, status: :created, location: @photo }
-      else
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
-    end
-  end 
-
   def index
     @photos = Photo.where(:public => true)
     respond_to do |format|
@@ -112,7 +100,39 @@ class PhotosController < ApplicationController
     end
   end
 
+  def create
+    if user_signed_in?
+      create_for_signed_in
+    else
+      create_for_guest
+    end
+  end 
+
   private
+
+    def create_for_guest
+      @link = Link.new
+      params[:photo][:photo].each do |f|
+        @link.photos.append Photo.new(photo: f, :public => true)
+      end
+      @link.save
+
+      respond_to do |format|
+        format.js { render js: "window.location='#{link_to_path(@link.url)}'"}
+      end
+    end
+
+    def create_for_signed_in
+      @photo = Photo.new(photo_params)
+      @photo.profile = current_user.profile if user_signed_in?
+      respond_to do |format|
+        if @photo.save
+          format.json { render json: {files: [@photo.to_jq_upload]}, status: :created, location: @photo }
+        else
+          format.json { render json: @photo.errors, status: :unprocessable_entity }
+        end
+      end
+    end
 
     def get_photo_for_edit
       @photo = Photo.find(params[:id])

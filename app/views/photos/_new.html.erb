@@ -1,7 +1,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span>Upload Images</span>
+    <span id="progres">Upload Images</span>
     <% if user_signed_in? %>
       <span class="pull-right">
         <%= button_to "Camera" , camera_path,method: "get", class: "btn btn-xs btn-primary" %>
@@ -16,7 +16,11 @@
           <span class="btn btn-success fileinput-button">
             <i class="icon-plus icon-white"></i>
             <span>Add files...</span>
-            <%= f.file_field :photo , :multiple => :true , :name => 'photo[photo]' %>
+            <% if user_signed_in? %>
+              <%= f.file_field :photo , :multiple => :true , :name => 'photo[photo]' %>
+            <% else %>
+              <%= f.file_field :photo , :multiple => :true , :name => 'photo[photo][]' %>
+            <% end %>
           </span>
         </div>
         <div class="span5">
@@ -101,12 +105,18 @@
       var ad = 0;
 
       $('#fileupload').fileupload({
+        <% if !user_signed_in? %>
+          singleFileUploads: false,
+          dataType: 'script',
+
+        <% else %>
+          limitConcurrentUploads: 2,
+        <% end %>
        autoUpload: true,
        previewMaxHeight: 50,
        previewMaxWidth: 50,
        previewCrop: true,
        progressInterval:100,
-       imitConcurrentUploads: 2
       });
 
       $('body').on('DOMNodeInserted','.template-download',function(){
@@ -132,6 +142,7 @@
       $('#fileupload')
         .bind('fileuploadprogressall', function (e, data) {
            ad = data.loaded/data.total * 100 ;
+           $("#progres").html("Upload images ("+ad+" %)");
         });
 
       $('#fileupload')

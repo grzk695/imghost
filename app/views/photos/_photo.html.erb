@@ -3,7 +3,7 @@
 		<% id = @link.url %>
 	<% end %>
 	<% id||=nil %>
-	<%= link_to image_tag( photo.photo.url(:thumb), class: "img-thumbnail"),
+	<%= link_to image_tag( photo.photo.url(:thumb), class: "img-thumbnail img-thumbnaila"),
 							show_photo_path( @type ,photo ,:link=>id ),
 					{remote: true, 'data-toggle' => "modal", 'data-target' => "#modal-window"} %>
 	<% if owner_signin? photo %>
