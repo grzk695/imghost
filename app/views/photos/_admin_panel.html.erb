@@ -1,3 +1,11 @@
+ <%= button_to "Rotate left" , rotate_photo_path(@photo.id , "left") , 
+		class: "btn btn-success btn-xs" , method: :patch , remote: true %>
+<%= button_to "Rotate right" , rotate_photo_path(@photo.id , "right")  , 
+		class: "btn btn-success btn-xs" , method: :patch , remote: true %>
+
+
+
+
  <%= button_to "Edit" , edit_photo_path , method: :get , remote: true , class: "btn btn-success btn-xs" %>
 
  <%= button_to "Delete" , photo_path , method: :delete , remote: true , class: "btn btn-danger btn-xs",

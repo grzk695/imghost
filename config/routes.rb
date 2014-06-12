@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'photo/:id/public', to: 'photos#to_public', :as => :public_photo
   get 'photo/:id/private', to: 'photos#to_private', :as => :private_photo
   delete 'photo/:id/album', to: 'photos#delete_from_album' , :as => :delete_photo_from_album
+  patch 'photo/:id/rotate/:d', to: 'photos#rotate' , :as => :rotate_photo
 
   get 'profile/:name/all', to: 'profiles#photos', :as => :profile_photos
   

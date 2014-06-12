@@ -22,4 +22,5 @@
 //= require jquery-fileupload
 //= require image-picker.min.js
 //= require jquery.capty.min.js
+//= require jQueryRotate.js
 //= require_tree .

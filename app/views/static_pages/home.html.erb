@@ -1,3 +1,18 @@
 <h2>Public gallery</h2>
 
-<%= render "photos/photos" %>
+<div class="row">
+	<% if !user_signed_in? %>
+		<div class="col-md-8">
+	<% else %>
+		<div class="col-md-12">
+	<% end %>
+
+	 <%= render "photos/photos" %>
+ 	
+	</div>
+
+	<div class="col-md-4">
+		<%= render 'photos/new' %>
+	</div>
+
+</div>

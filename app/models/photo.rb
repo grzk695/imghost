@@ -27,6 +27,24 @@ class Photo < ActiveRecord::Base
 
 	include Rails.application.routes.url_helpers
 
+  def rotate! direction
+    if direction == "left"
+      angle = -90;
+    elsif direction == "right"
+      angle = 90;
+    end
+
+    require 'RMagick'
+
+    img = Magick::Image.read(self.photo.path).first()
+    img2 = img.rotate(angle)
+    img2.write(self.photo.path)
+    img.destroy!
+    img2.destroy!
+
+    self.photo.reprocess!
+  end
+
 	def to_jq_upload
     {
       "name" => read_attribute(:photo_file_name),

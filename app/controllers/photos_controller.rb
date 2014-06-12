@@ -1,13 +1,21 @@
 class PhotosController < ApplicationController
   before_action :get_photo_next_prev, only: [:show]
   before_action :check_signin, only: [:new_camera]
-  before_action :get_photo_for_edit, only: [:delete_from_album, :to_private, :to_public]
+  before_action :get_photo_for_edit, only: [:delete_from_album, :to_private, :to_public,
+                                            :rotate]
 
   helper :headshot
 
   load_and_authorize_resource :only => [:edit , :update , :destroy]
 
   def edit
+    respond_to do |format|
+      format.js 
+    end
+  end
+
+  def rotate
+    @photo.rotate!(params[:d])
     respond_to do |format|
       format.js 
     end

@@ -6,6 +6,7 @@ gem 'headshot'
 gem "gritter", "1.1.0"
 gem "paperclip"
 gem "paperclip-dropbox", ">= 1.1.7"
+gem 'rmagick', '2.13.2'
 gem "bootstrap-sass"
 gem 'bootstrap-modal-rails'
 gem "devise"  #authorization
