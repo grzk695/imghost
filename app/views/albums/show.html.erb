@@ -5,15 +5,16 @@
   <section class="col-md-4">
   	<% if can? :update , @album %>
       <div class="row" id="album-options">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          Album Options
-        </div>
-        <div class="panel-body">
-          <%= render 'albums/panel_options' %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Album Options
+          </div>
+          <div class="panel-body">
+            <%= render 'albums/panel_options' %>
+          </div>
         </div>
       </div>
-      </div>
+      <%= render "photos/photo_owner" %>
     <% end %>
   	<div class="row">
   		<div class="panel panel-default">

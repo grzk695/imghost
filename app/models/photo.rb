@@ -69,6 +69,8 @@ class Photo < ActiveRecord::Base
         return p.order("id DESC").first
   		elsif owner_kind == 'album'
         album.photos.where("id < ?", id).order("id DESC").first
+      elsif owner_kind == 'gallery'
+        Photo.where(:public => true).where("id < ?",id).order("id DESC").first
       elsif owner_kind == 'link'
         Link.where(url: link).first.all_photos.where("photos.id < ?", id).order("id DESC").first
   		end
@@ -81,6 +83,8 @@ class Photo < ActiveRecord::Base
         return p.order("id ASC").first
   		elsif owner_kind == 'album'
         album.photos.where("id > ?", id).order("id ASC").first
+      elsif owner_kind == 'gallery'
+        Photo.where(:public => true).where("id > ?",id).order("id ASC").first
   		elsif owner_kind == 'link'
         Link.where(url: link).first.all_photos.where("photos.id > ?", id).order("photos.id ASC").first
       end
@@ -93,6 +97,8 @@ class Photo < ActiveRecord::Base
         p=p.order(created_at: :desc).index(self)+1
       elsif owner_kind=='album'
         album.photos.order(created_at: :desc).index(self)+1
+      elsif owner_kind=='gallery'
+        Photo.where(:public => true).order(id: :desc).index(self)+1
   		elsif owner_kind == 'link'
         Link.where(url: link).first.all_photos.order(created_at: :desc).index(self)+1
       end
@@ -107,6 +113,8 @@ class Photo < ActiveRecord::Base
         album.photos.count
   		elsif owner_kind == 'link'
         Link.where(url: link).first.all_photos.count
+      elsif owner_kind=='gallery'
+        Photo.where(:public => true).count
       end
   	end
 

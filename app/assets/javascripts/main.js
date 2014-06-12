@@ -14,7 +14,7 @@ function initializePhotoSelection(){
        } else {
         selected.splice($.inArray($(this).val(),selected),1);
        }
-       $("#selectedNumber").html("Selected: "+selected.length);
+       $("#selectedNumber").html("Selected photos: "+selected.length);
     })
 }
 

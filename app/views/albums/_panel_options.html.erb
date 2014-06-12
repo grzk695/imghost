@@ -10,4 +10,8 @@
 			<%= link_to "Change album settings" , edit_album_path , 
           {remote: true , "data-toggle" => "modal" , "data-target" => "#modal-window"} %>
 		</li>
+		<li>
+			<%= link_to "Generate share link", links_path(ids: @album.id , type: "album"),
+					 method: :post , remote: true %>
+		</li>
 </ul>

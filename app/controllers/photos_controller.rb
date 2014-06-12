@@ -99,8 +99,8 @@ class PhotosController < ApplicationController
     @photos = Photo.where(:id => params[:ids]).accessible_by(current_ability,:destroy)
     how = @photos.destroy_all()
     respond_to do |format|
-      flash[:notice] = "#{how.count} photos has been deleted"
-      format.js { render :js => "window.location='#{profile_photos_path(current_user.profile.name)}'" }
+      flash[:notice] = "Number of deleted photos: #{how.count}"
+      format.js { render :js => "location.reload();" }
     end
   end
 
