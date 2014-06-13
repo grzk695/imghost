@@ -5,10 +5,10 @@ class Photo < ActiveRecord::Base
 		:styles=>{:thumb => "200x150#",:ico=>"50x30#"},
 		:url => "/system/:style/:hash.:extension",
 		:hash_secret => "photo",
-		:hash_data => ":class/:attachment/:id/:style/:created_at" # shoud be :updated_at, instead of :crated_at but there is a bug in paperclip
-		#:storage => ((Rails.env.production? || Rails.env.staging?) ? :filesystem : :dropbox )
+		:hash_data => ":class/:attachment/:id/:style/:created_at",  # shoud be :updated_at, instead of :crated_at but there is a bug in paperclip
+		:storage => ((Rails.env.production?) ? :filesystem : :dropbox ),
 		#:storage => :dropbox,
-    	#:dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
 	}
 
   attr_accessor :token
