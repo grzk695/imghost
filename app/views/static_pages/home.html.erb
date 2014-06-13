@@ -11,8 +11,10 @@
  	
 	</div>
 
+	<% if !user_signed_in? %>
 	<div class="col-md-4">
 		<%= render 'photos/new' %>
 	</div>
+	<% end %>
 
 </div>
