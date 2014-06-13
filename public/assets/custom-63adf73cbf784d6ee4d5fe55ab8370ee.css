@@ -1,0 +1,266 @@
+/* line 3, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* line 8, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+body {
+  padding-top: 60px;
+}
+
+/* line 12, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+section {
+  overflow: auto;
+}
+
+/* line 16, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 20, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.center {
+  text-align: center;
+}
+/* line 22, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* line 28, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.label a {
+  color: white !important;
+}
+
+/* line 33, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.photo-admin-panel {
+  margin-right: 40px;
+}
+/* line 35, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.photo-admin-panel .button_to {
+  float: left;
+  margin-left: 3px;
+}
+
+/* line 41, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+/* line 51, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* footer */
+/* line 59, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+}
+/* line 63, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+footer a {
+  color: #555;
+}
+/* line 65, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+footer a:hover {
+  color: #222;
+}
+/* line 70, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+footer small {
+  float: left;
+}
+/* line 74, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+footer ul {
+  float: right;
+  list-style: none;
+}
+/* line 77, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 85, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 175px;
+}
+
+/* line 93, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 103, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.photos {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 104, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.photos .photo {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+/* line 109, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.photos .photo .checkbox {
+  position: relative;
+  left: 90%;
+  bottom: 30px;
+}
+
+/* line 119, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.photo {
+  max-height: 600px;
+  max-width: 100%;
+}
+
+/* line 125, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 130, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.panel .pagination {
+  clear: both;
+  margin: 0px 0px 0px 0px;
+}
+
+/* line 136, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.modal-dialog .modal-header {
+  padding: 3px 5px 3px 15px;
+}
+
+/* line 142, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.photo-description {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  background-color: black;
+}
+/* line 148, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.photo-description strong {
+  margin-right: 30px;
+}
+
+/* line 153, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+#show-photo-footer {
+  padding: 2px 4px 2px 4px;
+  margin-top: 0px;
+}
+
+/* line 158, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.show-photo {
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width: 100%;
+  max-height: 70%;
+}
+
+@media all and (max-width: 799px) and (min-width: 300px) {
+  /* line 166, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+  #photo-browser-dialog {
+    width: 450px;
+    max-width: 100%;
+  }
+}
+@media all and (min-width: 800px) {
+  /* line 173, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+  #photo-browser-dialog {
+    width: 550px;
+    max-width: 100%;
+  }
+}
+@media all and (min-width: 800px) {
+  /* line 180, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+  #photo-browser-dialog {
+    width: 650px;
+    max-width: 100%;
+  }
+}
+@media all and (max-height: 399px) and (min-height: 300px) {
+  /* line 187, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+  #photo-browser-dialog, .show-photo {
+    max-height: 250px;
+  }
+}
+@media all and (max-height: 599px) and (min-height: 400px) {
+  /* line 193, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+  #photo-browser-dialog, .show-photo {
+    max-height: 400px;
+  }
+}
+@media all and (max-height: 799px) and (min-height: 600px) {
+  /* line 199, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+  #photo-browser-dialog, .show-photo {
+    max-height: 550px;
+  }
+}
+@media all and (min-height: 800px) {
+  /* line 205, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+  #photo-browser-dialog, .show-photo {
+    max-height: 650px;
+  }
+}
+/* line 213, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+#body-dialog {
+  padding: 0px 50px 0px 50px;
+}
+
+/* line 218, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.slider_next {
+  background: #f8f8f8;
+  position: relative;
+  border-radius: 70px;
+  position: absolute;
+  z-index: 99;
+  top: 50px;
+  right: -25px;
+  padding: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+/* line 230, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.slider_prev {
+  background: #f8f8f8;
+  position: relative;
+  border-radius: 70px;
+  position: absolute;
+  z-index: 99;
+  top: 50px;
+  left: -25px;
+  padding: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+/* line 242, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.modal.fade.in {
+  top: 40%;
+}
+
+/* line 246, /home/grzegorz/Pulpit/imghost/app/assets/stylesheets/custom.css.scss */
+.img-thumbnaila {
+  height: 120px;
+}
