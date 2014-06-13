@@ -23,9 +23,5 @@ module Imghost
     # config.i18n.default_locale = :de
     config.active_record.default_timezone = :local
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-
-    BootstrapNavbar.configure do |config|
-    config.bootstrap_version = '3.1.1'
-  end
 end
 end

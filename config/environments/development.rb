@@ -37,8 +37,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   Paperclip.options[:command_path] = "/usr/local/bin/"
   
-  BootstrapNavbar.configure do |config|
-  config.bootstrap_version = '3.1.1'
-end
 
 end

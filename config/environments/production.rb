@@ -81,7 +81,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  BootstrapNavbar.configure do |config|
-    config.bootstrap_version = '3.1.1'
-  end
+  
 end

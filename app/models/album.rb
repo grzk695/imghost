@@ -3,7 +3,6 @@ class Album < ActiveRecord::Base
 	has_many :photos , :dependent => :nullify
 	
 	has_many :shared_items , as: :item , dependent: :destroy
-	has_many :links , through: :shared_items 
 	
 	validates :profile, presence: true
 	validates :name, presence: true, length: {maximum: 50}
