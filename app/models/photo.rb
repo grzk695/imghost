@@ -1,3 +1,4 @@
+require 'RMagick'
 class Photo < ActiveRecord::Base
 
 	has_attached_file :photo, {
@@ -34,13 +35,10 @@ class Photo < ActiveRecord::Base
       angle = 90;
     end
 
-    require 'RMagick'
-
     img = Magick::Image.read(self.photo.path).first()
-    img2 = img.rotate(angle)
-    img2.write(self.photo.path)
+    img = img.rotate(angle)
+    img.write(self.photo.path)
     img.destroy!
-    img2.destroy!
 
     self.photo.reprocess!
   end
