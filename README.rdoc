@@ -1,2 +1,4 @@
-Opis projetku dostępny pod adresem:
-https://onedrive.live.com/redir?resid=E099E6685BF9AD4!125720&authkey=!ANca2PunVEEK3wo&ithint=file%2c.pdf
+Prosty hosting zdjęć.
+- możliwość wgrywania zdjęć bez zalogowania
+- tworzenie i zarządzanie albumami
+- udostępnianie zdjęć i albumów
