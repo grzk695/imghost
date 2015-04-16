@@ -4,4 +4,4 @@ Prosty hosting zdjęć.
 - udostępnianie zdjęć i albumów
 
 
-![Alt Text](https://github.com/grzk695/imghost/blob/master/screens/1.jpg?raw=true)
+![ScreenShot](https://github.com/grzk695/imghost/blob/master/screens/1.jpg)
