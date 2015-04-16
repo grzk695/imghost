@@ -3,4 +3,5 @@ Prosty hosting zdjęć.
 - tworzenie i zarządzanie albumami
 - udostępnianie zdjęć i albumów
 
-![alt tag](https://github.com/grzk695/imghost/blob/master/screens/1.jpg?raw=true)
+Zrzuty ekranu
+http://imgur.com/a/k4dS4
