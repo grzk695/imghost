@@ -16,7 +16,7 @@ class Photo < ActiveRecord::Base
 	belongs_to :profile
   belongs_to :album
 	
-  has_many :shared_items , as: :item , dependent: :destroy
+  has_many :items ,class_name: "SharedItem", as: :item , dependent: :destroy
 
 	validates :photo, presence: true
 	validates :title, length: {maximum: 30}
